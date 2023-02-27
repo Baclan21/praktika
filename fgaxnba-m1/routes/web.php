@@ -16,6 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/map', function () {
     return view('map');
 });
+Route::get('/katalog', function () {
+    return view('katalog');
+});
+Route::get('/about', function () {
+    return view('about');
+});
 
 Auth::routes();
 
