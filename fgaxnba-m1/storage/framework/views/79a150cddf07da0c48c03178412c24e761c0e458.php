@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <link rel="stylesheet" href="../resources/js/app.js">
 <link rel="stylesheet" href="../resources/js/bootstrap.js">
 <link rel="stylesheet" href="../resources/views/css/style.css">
@@ -32,4 +30,6 @@
     </li>
   </ul>
 </div>
-  @endsection
+  <?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /srv/users/astdvyrn/fgaxnba-m1/resources/views/about.blade.php ENDPATH**/ ?>

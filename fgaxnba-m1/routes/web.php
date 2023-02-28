@@ -26,3 +26,5 @@ Route::get('/about', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/katalog',[App\Http\Controllers\Group::class, 'GroupUs' ])->name('katalog');

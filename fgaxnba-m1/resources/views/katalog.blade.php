@@ -11,62 +11,17 @@
                 justify-content:space-between;
             }
             </style>
+            @foreach ( $a as $b)
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="../resources/views/img/df8fbc9126d8c6d4_1920xH.jpg" alt="Card image cap">
+                <img class="card-img-top" src="{{$b->img}}" alt="Card image cap">
                 <div class="card-body">
-                  <h5 class="card-title">Playstation 5
+                  <h5 class="card-title"> {{ $b->name}}
                   </h5>
-                  <p class="card-text">Два геймпада, игра Roblox</p>
-                  <a href="#" class="btn btn-primary">50000Р</a>
+                  <p class="card-text">{{$b->description}}</p>
+                  <a href="#" class="btn btn-primary">{{$b->price}}</a>
                 </div>
               </div>
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="../resources/views/img/df8fbc9126d8c6d4_1920xH.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Playstation 5
-                  </h5>
-                  <p class="card-text">Два геймпада, игра Roblox</p>
-                  <a href="#" class="btn btn-primary">50000Р</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="../resources/views/img/df8fbc9126d8c6d4_1920xH.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Playstation 5
-                  </h5>
-                  <p class="card-text">Два геймпада, игра Roblox</p>
-                  <a href="#" class="btn btn-primary">50000Р</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="../resources/views/img/df8fbc9126d8c6d4_1920xH.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Playstation 5
-                  </h5>
-                  <p class="card-text">Два геймпада, игра Roblox</p>
-                  <a href="#" class="btn btn-primary">50000Р</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="../resources/views/img/df8fbc9126d8c6d4_1920xH.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Playstation 5
-                  </h5>
-                  <p class="card-text">Два геймпада, игра Roblox</p>
-                  <a href="#" class="btn btn-primary">50000Р</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="../resources/views/img/df8fbc9126d8c6d4_1920xH.jpg" alt="Card image cap">
-                <div class="card-body">
-                  <h5 class="card-title">Playstation 5
-                  </h5>
-                  <p class="card-text">Два геймпада, игра Roblox</p>
-                  <a href="#" class="btn btn-primary">50000Р</a>
-                </div>
-              </div>
+              @endforeach
 
-        </div>
-    </div>
-</div>
-@endsection
+              @endsection
+
