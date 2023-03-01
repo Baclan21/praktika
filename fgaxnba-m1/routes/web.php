@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +29,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/katalog',[App\Http\Controllers\Group::class, 'GroupUs' ])->name('katalog');
+Route::get('/basket/index', 'BasketController@index')->name('basket.index');
+Route::get('/basket/checkout', 'BasketController@checkout')->name('basket.checkout');
+Route::post('/basket/add/{id}', 'BasketController@add')
+    ->where('id', '[0-9]+')
+    ->name('basket.add');
+    Route::get('/test', [Product::class,"baskets"]);

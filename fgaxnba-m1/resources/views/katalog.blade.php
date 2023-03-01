@@ -21,6 +21,8 @@
                   <a href="#" class="btn btn-primary">{{$b->price}}</a>
                 </div>
               </div>
+
+
               @endforeach
 
               @endsection

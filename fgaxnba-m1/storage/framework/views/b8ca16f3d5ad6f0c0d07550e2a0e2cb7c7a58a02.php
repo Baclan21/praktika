@@ -20,6 +20,8 @@
                   <a href="#" class="btn btn-primary"><?php echo e($b->price); ?></a>
                 </div>
               </div>
+
+
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
               <?php $__env->stopSection(); ?>
