@@ -9,6 +9,9 @@
                 justify-content:space-between;
             }
             </style>
+            <?php if($add==1): ?>
+            <h1> Товар добавлен в корзину</h1>
+            <?php endif; ?>
             <?php $__currentLoopData = $a; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="<?php echo e($b->img); ?>" alt="Card image cap">
@@ -17,7 +20,7 @@
 
                   </h5>
                   <p class="card-text"><?php echo e($b->description); ?></p>
-                  <a href="#" class="btn btn-primary"><?php echo e($b->price); ?></a>
+                  <a href="/public/test/<?php echo e($b->id); ?>" class="btn btn-primary"><?php echo e($b->price); ?></a>
                 </div>
               </div>
 

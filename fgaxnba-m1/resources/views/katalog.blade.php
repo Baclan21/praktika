@@ -11,6 +11,9 @@
                 justify-content:space-between;
             }
             </style>
+            @if($add==1)
+            <h1> Товар добавлен в корзину</h1>
+            @endif
             @foreach ( $a as $b)
             <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="{{$b->img}}" alt="Card image cap">
@@ -18,7 +21,7 @@
                   <h5 class="card-title"> {{ $b->name}}
                   </h5>
                   <p class="card-text">{{$b->description}}</p>
-                  <a href="#" class="btn btn-primary">{{$b->price}}</a>
+                  <a href="/public/test/{{$b->id}}" class="btn btn-primary">{{$b->price}}</a>
                 </div>
               </div>
 

@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\DB;
 
 class Group extends Controller
 {
-    public function GroupUs(){
+    public function GroupUs($add=0){
       $a=DB::table('product')->get();
-      return view('katalog', compact('a'));
+      return view('katalog', ["a"=>$a, "add"=>$add]);
     }
 }

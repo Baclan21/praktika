@@ -20,12 +20,16 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                    <img src="../resources/views/img/logo.png">
+                    <img src="/resources/views/img/logo.png">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                             <li class="nav-item"> <a href="map" class="nav-link"> Где нас найти </a> </li>
                             <li class="nav-item"> <a href="katalog" class="nav-link"> Каталог </a> </li>
+                            @auth
+                            <li class="nav-item"> <a href="test" class="nav-link"> Корзина </a> </li>
+                            @endauth
+                            <li class="nav-item"> <a href="about" class="nav-link"> О нас </a> </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

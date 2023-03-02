@@ -17,9 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/map', function () {
     return view('map');
 });
-Route::get('/katalog', function () {
-    return view('katalog');
-});
 Route::get('/about', function () {
     return view('about');
 });
@@ -27,11 +24,6 @@ Route::get('/about', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/katalog',[App\Http\Controllers\Group::class, 'GroupUs' ])->name('katalog');
-Route::get('/basket/index', 'BasketController@index')->name('basket.index');
-Route::get('/basket/checkout', 'BasketController@checkout')->name('basket.checkout');
-Route::post('/basket/add/{id}', 'BasketController@add')
-    ->where('id', '[0-9]+')
-    ->name('basket.add');
-    Route::get('/test', [Product::class,"baskets"]);
+Route::get('/katalog/{add?}',[App\Http\Controllers\Group::class, 'GroupUs' ])->name('katalog');
+Route::get('/test', [Product::class,"baskets"])->name('test');
+Route::get('/test/{id?}',[Product::class,"products"]);
