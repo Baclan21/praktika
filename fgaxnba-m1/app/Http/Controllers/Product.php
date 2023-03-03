@@ -23,5 +23,13 @@ class Product extends Controller
             ]);
             return redirect('/katalog/1');
     }
+    public function slider($id="id", $sort="desc"){
+        $a=Basket::orderby($id,$sort)->limit(5)->get();
+        return view('about',['a' => $a]);
+    }
+    public function deletet($id){
+        Basket::find($id)->delete();
+        return redirect()->route('delete')->with('Товар был удален');
+    }
 
 }

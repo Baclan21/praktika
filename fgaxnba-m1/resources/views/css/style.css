@@ -8,3 +8,21 @@
 .card{
     margin-bottom: 25px;
 }
+.sliders{
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+}
+.carousel-item{
+    text-align: center;
+    align-items: center;
+}
+.carousel-item > img{
+    width: 50% !important;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px;
+    margin-left: 25%;
+    height: 450px;
+    background-color: white !important;
+}

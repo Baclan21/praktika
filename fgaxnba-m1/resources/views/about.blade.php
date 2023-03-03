@@ -1,35 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-<link rel="stylesheet" href="../resources/js/app.js">
-<link rel="stylesheet" href="../resources/js/bootstrap.js">
-<link rel="stylesheet" href="../resources/views/css/style.css">
-
-<div class="container">
-  <ul class="slides">
-    <li id="slide1"><img src="../resources/views/img/nintendo-switch-lite-coral (1).jpg" alt="" /></li>
-    <li id="slide2"><img src="../resources/views/img/13014.jpg" alt="" /></li>
-    <li id="slide3"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw3.jpg" alt="" /></li>
-    <li id="slide4"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw4.jpg" alt="" /></li>
-    <li id="slide5"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw5.jpg" alt="" /></li>
-  </ul>
-
-  <ul class="thumbnails">
-    <li>
-      <a href="#slide1"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw1.jpg" /></a>
-    </li>
-    <li>
-      <a href="#slide2"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw2.jpg" /></a>
-    </li>
-    <li>
-      <a href="#slide3"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw3.jpg" /></a>
-    </li>
-    <li>
-      <a href="#slide4"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw4.jpg" /></a>
-    </li>
-    <li>
-      <a href="#slide5"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw5.jpg" /></a>
-    </li>
-  </ul>
+<link rel="stylesheet" href="/resources/views/css/style.css">
+<div class="sliders"> 
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  @foreach ($a as $b )
+      
+  @if ($loop->first)
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{$b->products->img}}" class="d-block w-100" alt="...">
+    </div>
+@else
+    <div class="carousel-item">
+      <img src="{{$b->products->img}}" class="d-block w-100" alt="...">
+    </div>
+    @endif
+    @endforeach
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"  data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Предыдущий</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"  data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Следующий</span>
+  </button>
+</div>
 </div>
   @endsection

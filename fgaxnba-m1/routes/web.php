@@ -17,13 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/map', function () {
     return view('map');
 });
-Route::get('/about', function () {
-    return view('about');
-});
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/katalog/{add?}',[App\Http\Controllers\Group::class, 'GroupUs' ])->name('katalog');
 Route::get('/test', [Product::class,"baskets"])->name('test');
 Route::get('/test/{id?}',[Product::class,"products"]);
+Route::get('/test/{id?}/delete',[Product::class,"deletet"])->name('deletem');
+Route::get('/about',[Product::class,"slider"])->name('about');
