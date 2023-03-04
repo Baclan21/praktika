@@ -12,6 +12,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="/resources/views/css/style.css">
 
     <!-- Scripts -->
     <?php echo app('Illuminate\Foundation\Vite')(['resources/sass/app.scss', 'resources/js/app.js']); ?>
@@ -24,12 +25,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-                            <li class="nav-item"> <a href="map" class="nav-link"> Где нас найти </a> </li>
-                            <li class="nav-item"> <a href="katalog" class="nav-link"> Каталог </a> </li>
+                            <li class="nav-item"> <a href="/public/map" class="nav-link"> Где нас найти </a> </li>
+                            <li class="nav-item"> <a href="/public/katalog" class="nav-link"> Каталог </a> </li>
                             <?php if(auth()->guard()->check()): ?>
-                            <li class="nav-item"> <a href="test" class="nav-link"> Корзина </a> </li>
+                            <li class="nav-item"> <a href="/public/test" class="nav-link"> Корзина </a> </li>
                             <?php endif; ?>
-                            <li class="nav-item"> <a href="about" class="nav-link"> О нас </a> </li>
+                            <li class="nav-item"> <a href="/public/about" class="nav-link"> О нас </a> </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

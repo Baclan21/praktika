@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Basket;
+use App\Models\Producte as pr;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,7 +29,20 @@ class Product extends Controller
     }
     public function deletet($id){
         Basket::find($id)->delete();
-        return redirect()->route('delete')->with('Товар был удален');
+        return redirect(route('test'))->with('success','Товар был удален');
+    }
+    public function store(Request $request){
+            $prod=pr::create([
+
+                'name'=>$request->input('name'),
+                'img'=>$request->input('file'),
+                'price'=>$request->input('price'),
+                'quantity'=>$request->input('quantity'),
+                'description'=>$request->input('description'),
+                'kategory'=>$request->input('kategory'),
+            
+            ]);
+        return redirect()->back()->with('success', 'Товар добавлен');
     }
 
 }

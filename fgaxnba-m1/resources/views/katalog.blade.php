@@ -2,20 +2,20 @@
 
 @section('content')
 <link rel="stylesheet" href="../resources/views/css/style.css">
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="container katalog">
+    <div class="row katalog">
+        <div class="col-md-8 katalog">
 
-            <style> .card{
+            <!-- <style> .card{
                 display: flex;
                 justify-content:space-between;
             }
-            </style>
+            </style> -->
             @if($add==1)
             <h1> Товар добавлен в корзину</h1>
             @endif
             @foreach ( $a as $b)
-            <div class="card" style="width: 18rem;">
+            <div class="card">
                 <img class="card-img-top" src="{{$b->img}}" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title"> {{ $b->name}}

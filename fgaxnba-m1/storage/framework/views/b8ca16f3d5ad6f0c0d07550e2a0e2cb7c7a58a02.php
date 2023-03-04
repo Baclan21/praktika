@@ -1,19 +1,19 @@
 <?php $__env->startSection('content'); ?>
 <link rel="stylesheet" href="../resources/views/css/style.css">
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+<div class="container katalog">
+    <div class="row katalog">
+        <div class="col-md-8 katalog">
 
-            <style> .card{
+            <!-- <style> .card{
                 display: flex;
                 justify-content:space-between;
             }
-            </style>
+            </style> -->
             <?php if($add==1): ?>
             <h1> Товар добавлен в корзину</h1>
             <?php endif; ?>
             <?php $__currentLoopData = $a; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $b): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="card" style="width: 18rem;">
+            <div class="card">
                 <img class="card-img-top" src="<?php echo e($b->img); ?>" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title"> <?php echo e($b->name); ?>

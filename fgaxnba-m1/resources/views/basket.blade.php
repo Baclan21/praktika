@@ -10,7 +10,8 @@
       </h5>
       <p class="card-text"></p>
       <a href="" class="btn btn-primary">{{$j->products->price}}</a>
-      <a href="{{route ('deletem')}}" class="btn btn-primary">Удалить</a>
+      <a href="/public/test/{{$j->id}}/delete" class="btn btn-primary">Удалить</a>
+      
     </div>
   </div>
 @endforeach

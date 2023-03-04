@@ -25,3 +25,7 @@ Route::get('/test', [Product::class,"baskets"])->name('test');
 Route::get('/test/{id?}',[Product::class,"products"]);
 Route::get('/test/{id?}/delete',[Product::class,"deletet"])->name('deletem');
 Route::get('/about',[Product::class,"slider"])->name('about');
+Route::get('/products',function(){
+    return view('additem');
+});
+Route::post('/products',[Product::class,"store"])->name('store');
