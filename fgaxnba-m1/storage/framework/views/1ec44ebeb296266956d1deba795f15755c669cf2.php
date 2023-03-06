@@ -1,24 +1,22 @@
-@extends('layouts.app')
+<?php $__env->startSection('content'); ?>
 
-@section('content')
-
-<form method="POST" action="{{route('add-form')}}" enctype="multipart/form-data">
-    @csrf
+<form method="POST" action="<?php echo e(route('add-form')); ?>" enctype="multipart/form-data">
+    <?php echo csrf_field(); ?>
     <div class="container"
         <br>
         <div class="create-post">
             <h5> Create new post</h5>
             <form action="post" method="post">
-                @csrf
-                @if ($errors->any())
+                <?php echo csrf_field(); ?>
+                <?php if($errors->any()): ?>
                 <div class="alert alert-danger">
                     <ul>
-                        @foreach($errors->all() as $error)
-                        <li> {{$error}}</li>
-                        @endforeach
+                        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li> <?php echo e($error); ?></li>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </ul>
                 </div>
-                @endif
+                <?php endif; ?>
                 form>
   <div class="form-row">
     <div class="col-md-4 mb-3">
@@ -72,4 +70,6 @@
 </form>
         </div>
     </div>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /srv/users/astdvyrn/fgaxnba-m1/resources/views/additem.blade.php ENDPATH**/ ?>

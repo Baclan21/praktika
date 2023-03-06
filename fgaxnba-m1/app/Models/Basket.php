@@ -12,6 +12,6 @@ class Basket extends Model
     'product_id',
     'quantity',];
     public function products(){
-        return $this->hasOne(Product::class, 'id', 'product_id');
+        return $this->hasOne(Producte::class, 'id', 'product_id');
     }
 }

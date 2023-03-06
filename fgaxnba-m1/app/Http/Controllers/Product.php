@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Basket;
 use App\Models\Producte as pr;
+use App\Http\Requests\Postrequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -31,18 +32,23 @@ class Product extends Controller
         Basket::find($id)->delete();
         return redirect(route('test'))->with('success','Товар был удален');
     }
-    public function store(Request $request){
-            $prod=pr::create([
+    public function store(Request $req){
+        $k=$req->file('img');
 
-                'name'=>$request->input('name'),
-                'img'=>$request->input('file'),
-                'price'=>$request->input('price'),
-                'quantity'=>$request->input('quantity'),
-                'description'=>$request->input('description'),
-                'kategory'=>$request->input('kategory'),
-            
-            ]);
-        return redirect()->back()->with('success', 'Товар добавлен');
+        $filename=$k->move(public_path('uploads'), $k->getClientOriginalName());
+        pr::create([
+            'name'=> $req->input('name'),
+        'img'=>'/public/uploads/'.$k->getClientOriginalName(),
+            'price'=>$req->input('price'),
+            'quantity'=>$req->input('quantity'),
+            'description'=>$req->input('description'),
+            'kategory'=>$req->input('kategory'),
+        ]);
+        return view('additem');
+
+       }
+       public function addstore(){
+
+        return view('additem');
+       }
     }
-
-}

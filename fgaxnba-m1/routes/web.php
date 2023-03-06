@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Group;
 use App\Http\Controllers\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -25,7 +26,5 @@ Route::get('/test', [Product::class,"baskets"])->name('test');
 Route::get('/test/{id?}',[Product::class,"products"]);
 Route::get('/test/{id?}/delete',[Product::class,"deletet"])->name('deletem');
 Route::get('/about',[Product::class,"slider"])->name('about');
-Route::get('/products',function(){
-    return view('additem');
-});
-Route::post('/products',[Product::class,"store"])->name('store');
+Route::get( '/additem', [App\Http\Controllers\Product::class, 'addstore']);
+Route::post('/products', [App\Http\Controllers\Product::class, 'store'])->name('add-form');
