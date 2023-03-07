@@ -5,7 +5,7 @@
     <div class="container"
         <br>
         <div class="create-post">
-            <h5> Create new post</h5>
+            <h5> Админ панель.</h5>
             <form action="post" method="post">
                 <?php echo csrf_field(); ?>
                 <?php if($errors->any()): ?>
@@ -17,18 +17,18 @@
                     </ul>
                 </div>
                 <?php endif; ?>
-                form>
+                <form>
   <div class="form-row">
     <div class="col-md-4 mb-3">
-      <label for="validationServer01">Имя</label>
-      <input type="text" name="name" class="form-control is-valid" id="validationServer01" placeholder="Название товара" value="Xbox" required>
+      <label for="validationServer01">Название товара</label>
+      <input type="text" name="name" class="form-control is-valid" id="validationServer01" placeholder="Название товара" required>
       <div class="valid-feedback">
         Looks good!
       </div>
     </div>
     <div class="col-md-4 mb-3">
-      <label for="validationServer02">img</label>
-      <input type="file" class="form-control is-valid" name="img" id="validationServer02" placeholder="Фамилия" value="Otto" required>
+      <label for="validationServer02">Загрузите картинку</label>
+      <input type="file" class="form-control is-valid" name="img" id="validationServer02" placeholder="img" required>
       <div class="valid-feedback">
         Looks good!
       </div>
@@ -39,28 +39,25 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroupPrepend3">Р</span>
         </div>
-        <input type="text" class="form-control is-invalid" id="validationServer" name="price" placeholder="price" aria-describedby="inputGroupPrepend3" required>
+        <input type="text" class="form-control is-invalid" id="validationServer" name="price" placeholder="Цена товара" aria-describedby="inputGroupPrepend3" required>
       </div>
     </div>
   </div>
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="validationServer03">Количество</label>
-      <input type="text" class="form-control is-invalid" id="validationServer03" placeholder="quantity" name="quantity" required>
+      <input type="text" class="form-control is-invalid" id="validationServer03" placeholder="Количество товара" name="quantity" required>
       <div class="invalid-feedback">
-        Please provide a valid city.
+        Введите точное количество товара.
       </div>
     </div>
     <div class="col-md-3 mb-3">
       <label for="validationServer04">State</label>
-      <input type="text" class="form-control is-invalid" id="validationServer04" placeholder="description" name="description" required>
-      <div class="invalid-feedback">
-        Please provide a valid state.
-      </div>
+      <input type="text" class="form-control is-invalid" id="validationServer04" placeholder="Описание товара" name="description" required>
     </div>
     <div class="col-md-3 mb-3">
-      <label for="validationServer05">Zip</label>
-      <input type="text" class="form-control is-invalid" id="validationServer05" placeholder="kategory" name="kategory" required>
+      <label for="validationServer05">Укажите категорию товара.</label>
+      <input type="text" class="form-control is-invalid" id="validationServer05" placeholder="Категория товара" name="kategory" required>
       <div class="invalid-feedback">
         Пожалуйста выберите категорию.
       </div>

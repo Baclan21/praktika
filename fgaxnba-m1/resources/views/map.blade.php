@@ -2,7 +2,8 @@
 
 @section('content')
 <center>
-<div class="card">
+<div class="cardd">
+    <center> 
     <div class="card-header"><img src="../resources/views/img/map.jpg"></div>
 
     <div class="card-body">
